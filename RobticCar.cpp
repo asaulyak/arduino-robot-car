@@ -16,23 +16,22 @@ void RoboticCar::Move(int direction)
 		break;
 
 		case LEFT:
-		this->_leftMotor.Stop();
+		this->_leftMotor.Move(BACKWARD);
 		this->_rightMotor.Move(FORWARD);
 		break;
 
 		case RIGHT:
 		this->_leftMotor.Move(FORWARD);
-		this->_rightMotor.Stop();
+		this->_rightMotor.Move(BACKWARD);
 		break;
 	}
 }
 
 // Public
-RoboticCar::RoboticCar(int IN1, int IN2, int IN3, int IN4) : 
-	_leftMotor(IN1, IN2), _rightMotor(IN3, IN4)
+RoboticCar::RoboticCar(int IN1, int IN2, int IN3, int IN4, int ENA, int ENB) : 
+	_leftMotor(IN1, IN2, ENA), _rightMotor(IN3, IN4, ENB)
 {
-	// this->_leftMotor = MotorDrive(IN1, IN2);
-	// this->_rightMotor = MotorDrive(IN3, IN4);
+	
 }
 
 void RoboticCar::MoveLeft()
@@ -55,18 +54,15 @@ void RoboticCar::MoveBackward()
 	this->Move(BACKWARD);
 }
 
-
-
 void RoboticCar::Stop()
 {
 	this->_leftMotor.Stop();
 	this->_rightMotor.Stop();
 }
 
-// void RoboticCar::TurnLeft(int angle)
-// {
-// 	// int motionTime = angle / 360.0 * this->fullTurnTime;
-// }
-
-
+void RoboticCar::SetSpeed(int speed)
+{
+	this._leftMotor.SetSpeed(speed);
+	this._rightMotor.SetSpeed(speed);
+}
 
