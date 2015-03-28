@@ -13,7 +13,7 @@ class MotorDrive
 	private:
 		int _IN1;
 		int _IN2;
-		int _ENABLED
+		int _ENABLED;
 
 		void Init();
 	public:

@@ -62,7 +62,7 @@ void RoboticCar::Stop()
 
 void RoboticCar::SetSpeed(int speed)
 {
-	this._leftMotor.SetSpeed(speed);
-	this._rightMotor.SetSpeed(speed);
+	this->_leftMotor.SetSpeed(speed);
+	this->_rightMotor.SetSpeed(speed);
 }
 

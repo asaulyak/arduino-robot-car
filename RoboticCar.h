@@ -1,6 +1,3 @@
-// #include <StandardCplusplus.h> 
-// #include <vector>
-
 #include "MotorDrive.h"
 
 // From MotorDrive:
@@ -19,12 +16,12 @@ private:
 
 public:
 
-	RoboticCar(int IN1, int IN2, int IN3, int IN4);
+	RoboticCar(int IN1, int IN2, int IN3, int IN4, int ENA, int ENB);
 
 	void MoveLeft();
 	void MoveRight();
 	void MoveForward();
 	void MoveBackward();
 	void Stop();
-	void Turn(int angle);
+	void SetSpeed(int speed);
 };
